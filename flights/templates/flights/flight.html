@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Flight</title>
+</head>
+<body>
+    <h1>Flight {{flight.id}}</h1>
+    <ul>
+        <li>Origin: {{flight.origin }}</li>
+        <li>Destination: {{flight.destination}}</li>
+    </ul>
+    <h2>Passengers</h2>
+    <ul>
+        {%for passenger in passengers%}
+        <li>{{passenger}}</li>
+        {% empty %}
+        <p>No passenger.</p>
+        {%endfor%}
+    </ul>
+    <a href="{% url 'index'%}">Back to full listings</a>
+</body>
+</html>
